@@ -19,7 +19,7 @@ class BooklyApp extends StatelessWidget {
         textTheme: GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
       ),
       debugShowCheckedModeBanner: false,
-      home: SplashView(),
+      home: const SplashView(),
     );
   }
 }
