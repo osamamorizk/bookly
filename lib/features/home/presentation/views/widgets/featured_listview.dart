@@ -1,4 +1,4 @@
-import 'package:bookly/features/home/presentation/views/widgets/list_view_item.dart';
+import 'package:bookly/features/home/presentation/views/widgets/feature_list_view_item.dart';
 import 'package:flutter/material.dart';
 
 class FeaturedListView extends StatelessWidget {
@@ -9,14 +9,15 @@ class FeaturedListView extends StatelessWidget {
     return SizedBox(
       height: MediaQuery.of(context).size.height * .28,
       child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemCount: 10,
-          itemBuilder: (context, index) {
-            return const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8),
-              child: FeaturedListViewItem(),
-            );
-          }),
+        scrollDirection: Axis.horizontal,
+        itemCount: 10,
+        itemBuilder: (context, index) {
+          return const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 8),
+            child: FeaturedListViewItem(),
+          );
+        },
+      ),
     );
   }
 }
