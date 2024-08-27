@@ -5,6 +5,32 @@ class BookDetailsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 20),
+      child: Column(
+        children: [CustomBookDetailsAppBar()],
+      ),
+    );
+  }
+}
+
+class CustomBookDetailsAppBar extends StatelessWidget {
+  const CustomBookDetailsAppBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.close),
+          ),
+          IconButton(
+              onPressed: () {}, icon: const Icon(Icons.shopping_cart_outlined))
+        ],
+      ),
+    );
   }
 }
