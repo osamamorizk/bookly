@@ -1,7 +1,6 @@
 import 'package:bookly/core/utils/styles.dart';
-import 'package:bookly/features/home/presentation/views/widgets/book_item.dart';
 import 'package:bookly/features/search/presentation/views/widgets/custom_search_textfield.dart';
-import 'package:bookly/features/search/presentation/views/widgets/search_reault_listView.dart';
+import 'package:bookly/features/search/presentation/views/widgets/search_reault_listview.dart';
 import 'package:flutter/material.dart';
 
 class SearchViewBody extends StatelessWidget {
