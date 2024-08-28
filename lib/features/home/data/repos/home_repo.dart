@@ -4,5 +4,5 @@ import 'package:dartz/dartz.dart';
 
 abstract class HomeRepo {
   Future<Either<Failure, List<Book>>> featchFuturedBooks();
-  Future<Either<Failure, List<Book>>> featchBestSellerBooks();
+  Future<Either<Failure, List<Book>>> featchNewestBooks();
 }
