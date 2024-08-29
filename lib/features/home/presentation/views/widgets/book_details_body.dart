@@ -1,3 +1,4 @@
+import 'package:bookly/features/home/data/models/book_model/book.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_details_appbar.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_details_section.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_image.dart';
@@ -6,8 +7,8 @@ import 'package:bookly/features/home/presentation/views/widgets/similar_books_se
 import 'package:flutter/material.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
-  const BookDetailsViewBody({super.key});
-
+  const BookDetailsViewBody({super.key, required this.book});
+  final Book book;
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -22,21 +23,22 @@ class BookDetailsViewBody extends StatelessWidget {
                 const CustomBookDetailsAppBar(),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: width * .21),
-                  child: const BookImage(
-                    imageUrl:
-                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-crw0gMQo_4KCXAtx9fxfrNr7eFEBmI1X4g&s',
+                  child: BookImage(
+                    imageUrl: book.volumeInfo.imageLinks?.thumbnail ?? '',
                   ),
                 ),
                 const SizedBox(
                   height: 40,
                 ),
-                const BooksDetailsSection(),
+                BooksDetailsSection(
+                  book: book,
+                ),
                 const Expanded(
                   child: SizedBox(
                     height: 45,
                   ),
                 ),
-                const SimilarBooksSection(),
+                SimilarBooksSection(),
                 const SizedBox(
                   height: 40,
                 )

@@ -13,7 +13,7 @@ class CustomActionButton extends StatelessWidget {
           CustomButton(
             backgroundColor: Colors.white,
             textcolor: Colors.black,
-            text: '19.99€',
+            text: 'Free',
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(16),
               bottomLeft: Radius.circular(16),
