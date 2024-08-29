@@ -2,15 +2,15 @@ import 'package:bookly/core/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
 class CustomActionButton extends StatelessWidget {
-  const CustomActionButton({super.key});
-
+  const CustomActionButton({super.key, this.onPressed});
+  final Function()? onPressed;
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 10),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10),
       child: Row(
         children: [
-          CustomButton(
+          const CustomButton(
             backgroundColor: Colors.white,
             textcolor: Colors.black,
             text: 'Free',
@@ -20,11 +20,12 @@ class CustomActionButton extends StatelessWidget {
             ),
           ),
           CustomButton(
+            onPressed: onPressed,
             backgroundColor: Color(0xffEF8262),
             textcolor: Colors.white,
             fontSize: 14,
             text: 'Free preview',
-            borderRadius: BorderRadius.only(
+            borderRadius: const BorderRadius.only(
               topRight: Radius.circular(16),
               bottomRight: Radius.circular(16),
             ),
