@@ -1,9 +1,9 @@
+import 'package:bookly/core/function/url_luncher.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/features/home/data/models/book_model/book.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_action_button.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class BooksDetailsSection extends StatelessWidget {
   const BooksDetailsSection({super.key, required this.book});
@@ -37,11 +37,9 @@ class BooksDetailsSection extends StatelessWidget {
           height: 37,
         ),
         CustomActionButton(
+          book: book,
           onPressed: () async {
-            Uri uri = Uri.parse(book.volumeInfo.previewLink!);
-            if (await canLaunchUrl(uri)) {
-              await launchUrl(uri);
-            }
+            customUrlLuncher(context, url: book.volumeInfo.previewLink);
           },
         ),
       ],
